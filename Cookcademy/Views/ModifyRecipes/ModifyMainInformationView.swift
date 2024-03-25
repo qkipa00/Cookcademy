@@ -36,6 +36,7 @@ struct ModifyMainInformationView: View {
             }
             .listRowBackground(listBackgroundColor)
             .pickerStyle(MenuPickerStyle())
+            .accentColor(listTextColor)
         }
         .foregroundColor(listTextColor)
     }

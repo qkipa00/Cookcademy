@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ModifyIngredientView: View {
-    @State var ingredient: Ingredient
+    @Binding var ingredient: Ingredient
+    let createAction: ((Ingredient) -> Void)
+    
+    @Environment(\.presentationMode) private var mode
+    
+    private let listBackgroundColor = AppColor.background
+    private let listTextColor = AppColor.foreground
     
     var body: some View {
         VStack {
             Form {
                 TextField("Ingredient Name", text: $ingredient.name)
+                    .listRowBackground(listBackgroundColor)
                 Stepper(value: $ingredient.quantity, in: 0...100, step: 1.0) {
                     HStack{
                         Text("Quantity: ")
@@ -22,7 +29,7 @@ struct ModifyIngredientView: View {
                                   formatter: NumberFormatter.decimal)
                         .keyboardType(.numbersAndPunctuation)
                     }
-                }
+                }.listRowBackground(listBackgroundColor)
                 Picker(selection: $ingredient.unit, label:
                         HStack {
                             Text("Unit")
@@ -34,8 +41,18 @@ struct ModifyIngredientView: View {
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
+                .listRowBackground(listBackgroundColor)
+                .accentColor(listTextColor)
+                HStack {
+                    Spacer()
+                    Button("Save") {
+                        createAction(ingredient)
+                        mode.wrappedValue.dismiss()
+                    }
+                    Spacer()
+                }.listRowBackground(listBackgroundColor)
             }
-        }
+        }.foregroundColor(listTextColor)
     }
 }
 
@@ -48,10 +65,12 @@ extension NumberFormatter {
 }
 
 struct ModifyIngredientView_Previews: PreviewProvider {
-    @State static var emptyIngredient = Ingredient(name: "", quantity: 1.0, unit: .none)
+    @State static var emptyIngredient = Ingredient()
     static var previews: some View {
         NavigationView {
-            ModifyIngredientView(ingredient: emptyIngredient)
+            ModifyIngredientView(ingredient: $emptyIngredient) { ingredient in
+                print(ingredient)
+            }
         }
     }
 }
