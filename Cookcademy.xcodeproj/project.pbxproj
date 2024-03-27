@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8400E3912BB481380019EC7F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400E3902BB481380019EC7F /* MainTabView.swift */; };
 		841E2D552BAA0BF40022C2A1 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E2D542BAA0BF40022C2A1 /* AppColor.swift */; };
 		84544E0D2BB091E90039F263 /* ModifyMainInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84544E0C2BB091E90039F263 /* ModifyMainInformationView.swift */; };
 		84C63F872BB3244900419190 /* ModifyDirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C63F862BB3244900419190 /* ModifyDirectionView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8400E3902BB481380019EC7F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		841E2D542BAA0BF40022C2A1 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		84544E0C2BB091E90039F263 /* ModifyMainInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMainInformationView.swift; sourceTree = "<group>"; };
 		84C63F862BB3244900419190 /* ModifyDirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDirectionView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				84CF888D2BAF11C700EF374F /* ModifyRecipes */,
 				84CF888C2BAF118400EF374F /* ExploreRecipes */,
+				8400E3902BB481380019EC7F /* MainTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				84C63F872BB3244900419190 /* ModifyDirectionView.swift in Sources */,
 				84CF888F2BAF125F00EF374F /* ModifyRecipeView.swift in Sources */,
 				84EE2A9E2BB167EF001DC179 /* ModifyComponentsView.swift in Sources */,
+				8400E3912BB481380019EC7F /* MainTabView.swift in Sources */,
 				84EB89A02BA8A4AD00491F24 /* RecipesListView.swift in Sources */,
 				84EB899E2BA8A4AD00491F24 /* CookcademyApp.swift in Sources */,
 				84544E0D2BB091E90039F263 /* ModifyMainInformationView.swift in Sources */,

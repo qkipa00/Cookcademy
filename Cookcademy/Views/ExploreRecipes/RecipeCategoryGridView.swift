@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecipeCategoryGridView: View {
-    @StateObject private var recipeData = RecipeData()
+    @EnvironmentObject private var recipeData: RecipeData
     
     var body: some View {
         let columns = [GridItem(), GridItem()]
@@ -19,11 +19,10 @@ struct RecipeCategoryGridView: View {
                     ForEach(MainInformation.Category.allCases, id: \.self) {
                         category in
                         NavigationLink(
-                            destination: RecipesListView(category: category)
-                                .environmentObject(recipeData),
-                            label: {
+                            destination: RecipesListView(viewStyle: .singleCategory(category)), label: {
                                 CategoryView(category: category)
-                            })
+                            }
+                        )
                     }
                 })
             }
